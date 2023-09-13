@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
 ##############################################################################
 # Variables File
 #
@@ -30,7 +33,7 @@ variable "subnet_prefix" {
 
 variable "machine_type" {
   description = "Specifies the GCP instance type."
-  default     = "f1-micro"
+  default     = "g1-small"
 }
 
 variable "height" {

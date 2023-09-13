@@ -1,3 +1,6 @@
+# Copyright (c) HashiCorp, Inc.
+# SPDX-License-Identifier: Apache-2.0
+
 terraform {
   required_providers {
     google = {
@@ -39,8 +42,7 @@ resource "google_compute_firewall" "http-server" {
 }
 
 resource "tls_private_key" "ssh-key" {
-  algorithm = "RSA"
-  rsa_bits  = "4096"
+  algorithm = "ED25519"
 }
 
 resource "google_compute_instance" "hashicat" {
@@ -50,7 +52,7 @@ resource "google_compute_instance" "hashicat" {
 
   boot_disk {
     initialize_params {
-      image = "ubuntu-os-cloud/ubuntu-1804-lts"
+      image = "ubuntu-os-cloud/ubuntu-2204-lts"
     }
   }
 
